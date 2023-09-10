@@ -22,18 +22,19 @@ public class Persona {
     private String apellido;
     private int edad;
     @OneToOne
-    @JoinColumn(name="id_mascota")
+    @JoinColumn(name="id_mascota", referencedColumnName = "id_mascota") // indicar el la columna de referencia no es necesario pero lo dejo como buena practica
     private Mascota mascota;
 
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String apellido, int edad) {
+    public Persona(Long id, String nombre, String apellido, int edad, Mascota mascota) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
+        this.mascota = mascota;
     }
-       
-    
+
+  
 }
