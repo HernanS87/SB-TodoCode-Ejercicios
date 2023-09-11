@@ -1,6 +1,7 @@
 package com.todocode.jpaDemo.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,6 +29,7 @@ public class Persona {
     
     @ManyToOne
     @JoinColumn(name="id_mascota")
+    @JsonIgnoreProperties(value = { "duenios" }, allowSetters = true) // esta anotattion se utiliza para que cuando quiera devolver informacion en un JSON ignore la propiedad duenios de mascota ya que cuando muestre la lista de dueños estos tendran mascotas asociadas con listas de dueños y así entra en un ciclo infinito
     private Mascota pet;
 
     public Persona() {

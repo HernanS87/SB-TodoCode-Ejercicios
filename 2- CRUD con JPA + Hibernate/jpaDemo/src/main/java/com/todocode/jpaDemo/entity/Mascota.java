@@ -1,5 +1,6 @@
 package com.todocode.jpaDemo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,11 +25,12 @@ public class Mascota {
     private String color;
     
     @OneToMany(mappedBy = "pet")
+    @JsonIgnoreProperties(value = { "pet" }, allowSetters = true)  
     private List<Persona> duenios;
 
     public Mascota() {
     }
 
 
-    
+     
 }
