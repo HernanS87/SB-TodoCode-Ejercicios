@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import lombok.Getter;
@@ -24,16 +25,14 @@ public class Persona {
  //   @OneToOne
  //   @JoinColumn(name="id_mascota", referencedColumnName = "id_mascota") // indicar el la columna de referencia no es necesario pero lo dejo como buena practica
  //   private Mascota mascota;
+    
+    @ManyToOne
+    @JoinColumn(name="id_mascota")
+    private Mascota pet;
 
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String apellido, int edad) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-    }
 
-  
+ 
 }

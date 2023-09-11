@@ -23,18 +23,12 @@ public class Mascota {
     private String raza;
     private String color;
     
-    @OneToMany
+    @OneToMany(mappedBy = "pet")
     private List<Persona> duenios;
 
     public Mascota() {
     }
 
-    public Mascota(String nombre, String especie, String raza, String color) {
-        this.nombre = nombre;
-        this.especie = especie;
-        this.raza = raza;
-        this.color = color;
-    }
-    
+
     
 }
