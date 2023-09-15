@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import java.util.List;
@@ -24,8 +25,13 @@ public class Mascota {
     private String raza;
     private String color;
     
-    @OneToMany(mappedBy = "pet")
-    @JsonIgnoreProperties(value = { "pet" }, allowSetters = true)  
+//    @OneToMany(mappedBy = "pet")
+//    @JsonIgnoreProperties(value = { "pet" }, allowSetters = true) 
+    
+    // RELACION UNIDIRECCIONAL SIN TABLA INTERMEDIA
+    
+    @OneToMany 
+    @JoinColumn(name = "id_mascota")
     private List<Persona> duenios;
 
     public Mascota() {

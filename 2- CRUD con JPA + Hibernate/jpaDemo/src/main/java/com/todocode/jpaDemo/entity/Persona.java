@@ -27,10 +27,10 @@ public class Persona {
  //   @JoinColumn(name="id_mascota", referencedColumnName = "id_mascota") // indicar el la columna de referencia no es necesario pero lo dejo como buena practica
  //   private Mascota mascota;
     
-    @ManyToOne
-    @JoinColumn(name="id_mascota")
-    @JsonIgnoreProperties(value = { "duenios" }, allowSetters = true) // esta anotattion se utiliza para que cuando quiera devolver informacion en un JSON ignore la propiedad duenios de mascota ya que cuando muestre la lista de dueños estos tendran mascotas asociadas con listas de dueños y así entra en un ciclo infinito
-    private Mascota pet;
+//    @ManyToOne
+//    @JoinColumn(name="id_mascota")
+//    @JsonIgnoreProperties(value = { "duenios" }, allowSetters = true) // esta anotattion se utiliza para que cuando quiera devolver informacion en un JSON ignore la propiedad duenios de mascota ya que cuando muestre la lista de dueños estos tendran mascotas asociadas con listas de dueños y así entra en un ciclo infinito
+//    private Mascota pet;
 
     public Persona() {
     }
