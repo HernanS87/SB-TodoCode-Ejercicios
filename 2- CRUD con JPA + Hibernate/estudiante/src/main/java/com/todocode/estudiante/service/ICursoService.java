@@ -1,6 +1,7 @@
 package com.todocode.estudiante.service;
 
 import com.todocode.estudiante.entity.Curso;
+import com.todocode.estudiante.entity.Tema;
 import java.util.List;
 
 
@@ -15,5 +16,7 @@ public interface ICursoService {
   public void deleteCurso(Long id);
   
   public void editCurso(Curso c);
+  
+  public List<Tema> getTemas(Long id);
   
 }

@@ -1,6 +1,7 @@
 package com.todocode.estudiante.service;
 
 import com.todocode.estudiante.entity.Curso;
+import com.todocode.estudiante.entity.Tema;
 import com.todocode.estudiante.repository.ICursoRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,10 @@ public class CursoService implements ICursoService {
   public void editCurso(Curso c) {
     this.saveCurso(c);
   }
+
+   @Override
+   public List<Tema> getTemas(Long id) {
+      return findCurso(id).getLista_temas();
+   }
   
 }

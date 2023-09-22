@@ -1,6 +1,7 @@
 package com.todocode.estudiante.controller;
 
 import com.todocode.estudiante.entity.Curso;
+import com.todocode.estudiante.entity.Tema;
 import com.todocode.estudiante.service.ICursoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,11 @@ public class CursoController {
    @GetMapping("/cursos/traer")
    public List<Curso> getCursos(){
       return cursoService.getCursos();
+   }
+   
+   @GetMapping("/cursos/traer/temas/{id}")
+   public List<Tema> getTemas(@PathVariable Long id){
+      return cursoService.getTemas(id);
    }
    
    @PostMapping("cursos/crear")
