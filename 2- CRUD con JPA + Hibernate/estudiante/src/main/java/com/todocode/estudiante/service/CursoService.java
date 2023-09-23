@@ -42,5 +42,10 @@ public class CursoService implements ICursoService {
    public List<Tema> getTemas(Long id) {
       return findCurso(id).getLista_temas();
    }
+
+   @Override
+   public List<Curso> getCursosByName(String name) {
+      return cursoRepo.getCursosByName(name);
+   }
   
 }

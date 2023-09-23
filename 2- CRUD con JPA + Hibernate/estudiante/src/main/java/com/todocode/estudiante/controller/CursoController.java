@@ -2,6 +2,7 @@ package com.todocode.estudiante.controller;
 
 import com.todocode.estudiante.entity.Curso;
 import com.todocode.estudiante.entity.Tema;
+import com.todocode.estudiante.repository.ICursoRepository;
 import com.todocode.estudiante.service.ICursoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,11 @@ public class CursoController {
    @GetMapping
    public String inicio(){
       return "Estudiante de Programación";
+   }
+   
+    @GetMapping("/cursos/traer/{name}")
+   public List<Curso> getCursosByName(@PathVariable String name){
+      return cursoService.getCursosByName(name);
    }
    
    @GetMapping("/cursos/traer")

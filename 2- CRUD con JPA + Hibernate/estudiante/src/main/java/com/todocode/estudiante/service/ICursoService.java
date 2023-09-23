@@ -9,6 +9,8 @@ public interface ICursoService {
   
   public List<Curso> getCursos();
   
+  public List<Curso> getCursosByName(String name);
+  
   public Curso findCurso(Long id);
   
   public void saveCurso(Curso c);
