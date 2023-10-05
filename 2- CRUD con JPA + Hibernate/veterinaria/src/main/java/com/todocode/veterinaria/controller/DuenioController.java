@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -33,16 +34,19 @@ public class DuenioController {
       return "Se creó el dueño " + d.getNombre() +" correctamente";
    }
    
-   @PutMapping("/duenios/crear")
+   @PutMapping("/duenios/editar")
    public String editDuenio(@RequestBody Duenio d){
       duenioService.saveDuenio(d);
       return "Se editó el dueño " + d.getNombre() +" correctamente";
    }
    
+   // POR DEFECTO LOS PARAMETROS SON TODOS REQUERIDOS Y SI QUERES CAMBIAR EL NOMBRE A UNO TENES QUE PONER LA SIGUIENTE LINEA
+   //  @RequestParam(name = "mensaje", required = false) String mjs)
    @DeleteMapping("/duenios/eliminar")
-   public String deleteDuenio(Long id){
+   public String deleteDuenio(@RequestParam Long id,
+                              @RequestParam(required = false) String mjs){
       duenioService.deleteDuenio(id);
-      return "Se eliminó el dueño correctamente";
+      return "Se eliminó el dueño correctamente" + mjs;
    }
    
 }
