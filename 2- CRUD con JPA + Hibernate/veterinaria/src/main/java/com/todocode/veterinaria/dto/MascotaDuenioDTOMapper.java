@@ -2,8 +2,9 @@ package com.todocode.veterinaria.dto;
 
 import com.todocode.veterinaria.entity.Duenio;
 import com.todocode.veterinaria.entity.Mascota;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class MascotaDuenioDTOMapper {
    
    public MascotaDuenioDTO mascotaDuenio2DTO(Mascota m){

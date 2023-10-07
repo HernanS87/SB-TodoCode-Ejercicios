@@ -1,5 +1,6 @@
 package com.todocode.veterinaria.controller;
 
+import com.todocode.veterinaria.dto.MascotaDuenioDTO;
 import com.todocode.veterinaria.entity.Mascota;
 import com.todocode.veterinaria.service.IMascotaService;
 import java.util.List;
@@ -26,18 +27,23 @@ public class MascotaController {
    @PostMapping("/mascotas/crear")
    public String saveMascota(@RequestBody Mascota d){
       mascotaService.saveMascota(d);
-      return "Se creó el dueño " + d.getNombre() +" correctamente";
+      return "Se creó el perro " + d.getNombre() +" correctamente";
    }
    
    @PutMapping("/mascotas/editar")
    public String editMascota(@RequestBody Mascota d){
       mascotaService.saveMascota(d);
-      return "Se editó el dueño " + d.getNombre() +" correctamente";
+      return "Se editó el perro " + d.getNombre() +" correctamente";
    }
    
    @DeleteMapping("/mascotas/eliminar")
    public String deleteMascota(@RequestParam Long id){
       mascotaService.deleteMascota(id);
-      return "Se eliminó el dueño correctamente";
+      return "Se eliminó el perro correctamente";
+   }
+   
+    @GetMapping("/mascotas/info-mascota-y-duenio")
+   public MascotaDuenioDTO getInfoMascotaYDuenio(@RequestParam Long id){
+      return mascotaService.getInfoMascotaYDuenio(id);
    }
 }

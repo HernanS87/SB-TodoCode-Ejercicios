@@ -1,5 +1,7 @@
 package com.todocode.veterinaria.service;
 
+import com.todocode.veterinaria.dto.MascotaDuenioDTO;
+import com.todocode.veterinaria.dto.MascotaDuenioDTOMapper;
 import com.todocode.veterinaria.entity.Mascota;
 import com.todocode.veterinaria.repository.IMascotaRepository;
 import java.util.List;
@@ -11,6 +13,8 @@ public class MascotaService implements IMascotaService{
    
    @Autowired
    IMascotaRepository mascotaRepository;
+   @Autowired
+   MascotaDuenioDTOMapper mascotaDuenioDTOMapper;
 
    @Override
    public List<Mascota> getMascotas() {
@@ -30,6 +34,12 @@ public class MascotaService implements IMascotaService{
    @Override
    public void deleteMascota(Long id) {
       mascotaRepository.deleteById(id);
+   }
+
+   @Override
+   public MascotaDuenioDTO getInfoMascotaYDuenio(Long id) {
+      Mascota m = findMascota(id);
+      return mascotaDuenioDTOMapper.mascotaDuenio2DTO(m);
    }
    
 }

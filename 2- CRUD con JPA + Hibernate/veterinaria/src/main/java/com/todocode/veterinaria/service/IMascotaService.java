@@ -1,5 +1,6 @@
 package com.todocode.veterinaria.service;
 
+import com.todocode.veterinaria.dto.MascotaDuenioDTO;
 import com.todocode.veterinaria.entity.Mascota;
 import java.util.List;
 
@@ -13,5 +14,7 @@ public interface IMascotaService {
    public void saveMascota(Mascota d);
    
    public void deleteMascota(Long id);
+   
+   public MascotaDuenioDTO getInfoMascotaYDuenio(Long id);
    
 }
