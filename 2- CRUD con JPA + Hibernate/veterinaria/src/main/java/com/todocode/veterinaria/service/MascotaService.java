@@ -41,5 +41,13 @@ public class MascotaService implements IMascotaService{
       Mascota m = findMascota(id);
       return mascotaDuenioDTOMapper.mascotaDuenio2DTO(m);
    }
+
+   @Override
+   public List<Mascota> getMascotasFiltro(String especie, String raza) {
+      if (raza == null || raza.trim().isEmpty()){
+         raza = null;
+      }
+      return mascotaRepository.getMascotasFiltro(especie, raza);
+   }
    
 }

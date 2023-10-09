@@ -17,4 +17,6 @@ public interface IMascotaService {
    
    public MascotaDuenioDTO getInfoMascotaYDuenio(Long id);
    
+   public List<Mascota> getMascotasFiltro(String especie, String raza);
+   
 }

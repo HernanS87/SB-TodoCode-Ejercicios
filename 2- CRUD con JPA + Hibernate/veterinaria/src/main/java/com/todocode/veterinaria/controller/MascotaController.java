@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,5 +46,11 @@ public class MascotaController {
     @GetMapping("/mascotas/info-mascota-y-duenio")
    public MascotaDuenioDTO getInfoMascotaYDuenio(@RequestParam Long id){
       return mascotaService.getInfoMascotaYDuenio(id);
+   }
+   
+   @GetMapping("/mascotas")
+   public List<Mascota> getMascotasFiltro(@RequestParam String especie,
+                                             @RequestParam String raza){
+      return mascotaService.getMascotasFiltro(especie, raza);
    }
 }
