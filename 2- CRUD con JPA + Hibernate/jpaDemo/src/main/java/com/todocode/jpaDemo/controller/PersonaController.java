@@ -41,17 +41,5 @@ public class PersonaController {
         return "La persona fue eliminada correctamente";
     }
     
-    @PutMapping("/personas/editar/{idOriginal}")
-    public Persona editPersona(@PathVariable Long idOriginal,
-                               @RequestParam(required = false, name = "id") Long idNuevo,
-                               @RequestParam(required = false, name = "nombre") String nombreNuevo,
-                               @RequestParam(required = false, name = "apellido") String apellidoNuevo,
-                               @RequestParam(required = false, name = "edad") int edadNueva){
-        
-        personaServ.editPersona(idOriginal, idNuevo, nombreNuevo, apellidoNuevo, edadNueva);
-        
-        return personaServ.findPersona(idNuevo);
-        
-    } 
     
 }

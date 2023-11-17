@@ -34,16 +34,4 @@ public class PersonaService implements IPersonaService{
         persoRepo.deleteById(id);
     }
 
-    @Override
-    public void editPersona(Long idOriginal, Long idNuevo, String nombreNuevo, String apellidoNuevo, int edadNueva) {
-        Persona p = this.findPersona(idOriginal);
-        
-        p.setId(idNuevo);
-        p.setNombre(nombreNuevo);
-        p.setApellido(apellidoNuevo);
-        p.setEdad(edadNueva);
-        
-        this.savePersona(p);
-    }
-    
 }

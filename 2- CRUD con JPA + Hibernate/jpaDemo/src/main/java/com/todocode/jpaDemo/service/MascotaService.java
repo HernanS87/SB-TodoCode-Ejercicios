@@ -33,20 +33,5 @@ public class MascotaService implements IMascotaService{
     public void deleteMascota(Long id) {
         mascotaRepo.deleteById(id);
     }
-
-    @Override
-    public void editMascota(Long idOriginal, Long idNuevo, String nombreNuevo, String especieNuevo, String razaNuevo, String colorNuevo) {
-        Mascota m = this.findMascota(idOriginal);
-        
-        m.setId_mascota(idNuevo);
-        m.setNombre(nombreNuevo);
-        m.setEspecie(especieNuevo);
-        m.setRaza(razaNuevo);
-        m.setColor(colorNuevo);
-        
-        this.saveMascota(m);
-    }
-    
-    
     
 }

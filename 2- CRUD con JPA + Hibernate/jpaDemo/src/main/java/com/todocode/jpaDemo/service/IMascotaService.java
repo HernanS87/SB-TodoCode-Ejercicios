@@ -14,11 +14,6 @@ public interface IMascotaService {
     
     public void deleteMascota(Long id);
     
-    public void editMascota(Long idOriginal, 
-                            Long idNuevo, 
-                            String nombreNuevo, 
-                            String especieNuevo, 
-                            String razaNuevo,
-                            String colorNuevo);
+
     
 }
